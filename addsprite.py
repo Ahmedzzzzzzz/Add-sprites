@@ -21,15 +21,15 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT]:
-        x1 -= speed
-    if keys[pygame.K_RIGHT]:
-        x1 += speed
-    if keys[pygame.K_UP]:
-        y1 -= speed
-    if keys[pygame.K_DOWN]:
-        y1 += speed
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                x1 -= speed
+            if event.key == pygame.K_RIGHT:
+                x1 += speed
+            if event.key == pygame.K_UP:
+                y1 -= speed
+            if event.key == pygame.K_DOWN:
+                y1 += speed
 
     screen.fill(white)
     pygame.draw.rect(screen, blue, (x1, y1, width, height))
